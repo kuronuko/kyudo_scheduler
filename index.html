@@ -9,12 +9,15 @@
   </head>
   <body>
     <div id="app">
-      <div class="test">
-        {{ message }}
-      </div>
+      <!-- header -->
+      <?!= HtmlService.createHtmlOutputFromFile('header').getContent(); ?>
+      <!-- main -->
+      <?!= HtmlService.createHtmlOutputFromFile('main').getContent(); ?>
+      <!-- footer -->
+      <?!= HtmlService.createHtmlOutputFromFile('footer').getContent(); ?>
     </div>
+    <!-- vueスクリプト読み込み -->
     <?!= HtmlService.createHtmlOutputFromFile('js').getContent(); ?>
-    <ons-button onclick="alert('Hello World!')">Click Me</ons-button>
   </body>
 </html>
 
