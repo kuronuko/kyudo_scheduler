@@ -2,10 +2,10 @@
   {{ title }}
 </div>
 <div class="vertical-scroll-table">
-  <table v-for="val in month" class="sticky_table">
+  <table v-for="data in months" class="sticky_table">
     <thead>
       <tr>
-        <th colspan="4">{{ val }}月</th>
+        <th colspan="4">{{ data.month }}月</th>
       </tr>
       <tr>
         <th style="width: 10%;">日</th>
@@ -15,11 +15,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="day in dayOfWeek">
-        <td>1</td>
-        <td style="text-align: center;">{{ day }}</td>
-        <td>テスト</td>
-        <td style="text-align: center;">強</td>
+      <tr v-for="schedul in getSchedulerList(data.month)">
+        <td>{{ schedul.day }}</td>
+        <td style="text-align: center;">{{ schedul.dayOfWeek }}</td>
+        <td>{{ schedul.event }}</td>
+        <td style="text-align: center;">{{ schedul.type }}</td>
       </tr>
     </tbody>
   </table>

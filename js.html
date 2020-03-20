@@ -2,9 +2,157 @@
 new Vue({
   el: '#app',
   data: {
-    title: '年間スケジュール',
-    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    dayOfWeek: ['月', '火', '水', '木', '金', '土', '日',]
+    title: '◆年間スケジュール',
+    months: {},
+    schedul: [
+      {
+        year: 2020,
+        month: 4,
+        day: 26,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '県立武道館',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 5,
+        day: 10,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '鯖江市弓道場',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 5,
+        day: 17,
+        dayOfWeek: '日',
+        event: '北陸三県遠的選手権大会',
+        place: '県立武道館',
+        type: '北'
+      },
+      {
+        year: 2020,
+        month: 5,
+        day: 24,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '鯖江市弓道場',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 6,
+        day: 7,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '鯖江市弓道場',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 6,
+        day: 13,
+        dayOfWeek: '土',
+        event: '国体選手候補最終選考会',
+        place: '県立武道館',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 6,
+        day: 14,
+        dayOfWeek: '日',
+        event: '国体選手候補最終選考会',
+        place: '県立武道館',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 6,
+        day: 28,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '鯖江市弓道場',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 7,
+        day: 4,
+        dayOfWeek: '土',
+        event: '強化合宿',
+        place: '富山県',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 7,
+        day: 5,
+        dayOfWeek: '日',
+        event: '強化合宿',
+        place: '富山県',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 7,
+        day: 12,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '未定',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 7,
+        day: 19,
+        dayOfWeek: '日',
+        event: '強化練習',
+        place: '未定',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 7,
+        day: 25,
+        dayOfWeek: '土',
+        event: '強化練習',
+        place: '未定',
+        type: '強'
+      },
+      {
+        year: 2020,
+        month: 7,
+        day: 26,
+        dayOfWeek: '日',
+        event: '福井県弓道遠的大会',
+        place: '敦賀市弓道場',
+        type: '県'
+      }
+    ]
+  },
+  computed: {
+  },
+  methods: {
+    // 指定した月のスケジュールを取得する
+    getSchedulerList: function(month) {
+      return this.schedul.filter(function(item, index){
+        return (item.month === month)
+      });
+    },
+    // スケジュールが存在する月のリストを設定する
+    setMonthsList: function() {
+      this.months = this.schedul.filter(function(v1, i1, list){
+        return (list.findIndex(function(v2) {
+          return (v1.month === v2.month)
+        }) === i1)
+      });
+    }
+  },
+  created() {
+    this.setMonthsList();
   }
-});
+})
 </script>
