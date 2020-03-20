@@ -1,5 +1,28 @@
 <div>
-  {{ message }}
+  {{ title }}
+</div>
+<div class="vertical-scroll-table">
+  <table v-for="val in month" class="sticky_table">
+    <thead>
+      <tr>
+        <th colspan="4">{{ val }}月</th>
+      </tr>
+      <tr>
+        <th>日</th>
+        <th>曜日</th>
+        <th>行事名</th>
+        <th>種類</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="day in dayOfWeek">
+        <td>1</td>
+        <td>{{ day }}</td>
+        <td>テスト</td>
+        <td>強化</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div>
   <ons-button onclick="alert('Hello World!')">Click Me</ons-button>

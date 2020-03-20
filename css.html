@@ -11,7 +11,6 @@ header {
   background-color: #5507FF;
   color: #FFFFFF;
 }
-
 footer {
   position: fixed;
   bottom: 0;
@@ -20,5 +19,48 @@ footer {
   padding: 20px 0;
   background-color: #5507FF;
   color: #FFFFFF;
+}
+
+.vertical-scroll-table{
+	color: #5e5e5e;
+  height: calc(100vh - 190px);
+	overflow: scroll;
+	overflow-x: hidden;
+}
+table {
+  width: -webkit-fill-available;
+}
+.sticky_table thead tr:nth-child(1) th {
+  top: 0;
+  z-index: 2;
+}
+.sticky_table thead tr:nth-child(2) th {
+  top: 1.9rem; /* １行目の高さ */
+  z-index: 1;
+  font-weight: normal;
+}
+.sticky_table thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  white-space: nowrap;
+}
+.sticky_table {
+  border-collapse: collapse;
+}
+.sticky_table th, .sticky_table td {
+  padding: .2rem .5rem;
+}
+.sticky_table td:first-child {
+  text-align: right;
+}
+.sticky_table thead th {
+  background: #4169E1;
+  color: #E0E0E0;
+}
+.sticky_table tbody tr:nth-child(even) td {
+  background: #f0f0f0;
+}
+.sticky_table tbody tr:nth-child(odd) td {
+  background: #FAFAFA;
 }
 </style>
