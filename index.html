@@ -2,15 +2,19 @@
 <html>
   <head>
     <base target="_top">
+    <!-- CDN読み込み -->
+    <?!= HtmlService.createHtmlOutputFromFile('cdn').getContent(); ?>
+    <!-- cssファイル読み込み -->
     <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
   </head>
   <body>
     <div id="app">
-    <div class="test">
-      {{ message }}
-    </div>  
+      <div class="test">
+        {{ message }}
+      </div>
     </div>
     <?!= HtmlService.createHtmlOutputFromFile('js').getContent(); ?>
+    <ons-button onclick="alert('Hello World!')">Click Me</ons-button>
   </body>
 </html>
 
